@@ -1,15 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import authentication
 # Create your views here.
 def home(request):
     return HttpResponse("<h1>Home url successfully created.<h1>")
 
 def signup(request):
-    return HttpResponse("<h1>Sign up page<h1>")
+    return render(request, 'authentication/signup.html')
 
 def signin(request):
-    return HttpResponse("<h1>Sign in page<h1>")
-
+    return render(request, 'authentication/signin.html')
 def signout(request):
-    pass
+    return HttpResponse("Sign out")
