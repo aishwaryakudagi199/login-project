@@ -6,11 +6,42 @@
     <title>Document</title>
 </head>
 <body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">
+                Error: {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     <h2>sign up</h2>
-    <form action="signup" method = "post">
-    {% csrf_token %}
+    <form action="/signup" method="post">
+    {% csrf-token %}
+
         <label for="">User name</label>
-        <input type="text" name="username" id = "username">
+        <input type="text" id="username" name = "username" placeholder="Enter user name">
+        <br/>
+
+        <label for="">First name</label>
+        <input type="text" id="fname" name = "fname" placeholder="Enter first name">
+        <br/>
+
+        <label for="">Last name</label>
+        <input type="text" id = "lname" name = "lname" placeholder="Enter last name">
+        <br/>
+
+        <label for="">Email Address</label>
+        <input type="email" id = "email" name = "email" placeholder="Enter email">
+        <br/>
+
+        <label for="">Password</label>
+        <input type="password" id = "password" name = "password" placeholder="Enter password">
+        <br/>
+
+        <label for="">User name</label>
+        <input type="password" id = "cpassword" name = "cpassword" placeholder="Confirm your password">
+        <br/>
+
+        <button>sign up</button>
     </form>
 </body>
 </html>

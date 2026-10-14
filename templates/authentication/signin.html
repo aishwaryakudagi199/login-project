@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert">
+                Error: {{ message }}
+            </div>
+        {% endfor %}
+    {% enfif %}
+    
     <h1>SIGN IN</h1>
+    <form action="signin" method="post">
+    {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="username" placeholder="Enter username" name="username"/>
+        <br/>
+
+        <label for="">Password</label>
+        <input type="password" id = "password" name = "password" placeholder="Enter password"/>
+        <br/>
+
+        <button>sign in</button>
+        <br/>
+
+    </form>
 </body>
 </html>
